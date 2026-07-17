@@ -19,7 +19,15 @@
   <header>
     <nav>
       <h1 id="nameNavBar"><strong>CRISTOPHER SALAS</strong></h1>
-      <ul>
+
+      <!-- BOTÓN HAMBURGUESA - SOLO SE VE EN MOBILE -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="navLinks">
         <li><a href="#hero">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
@@ -141,76 +149,82 @@
   </section>
 
 
-<!-- PROYECTOS --> 
-<section class="projects" id="proyectos"> 
-  <div class="projects-container"> 
-    <h2>Proyectos Destacados</h2> 
-    <div class="projects-grid"> 
-      
-      <!-- PROYECTO 1: API RTMP --> 
-      <div class="project-content"> 
-        <a href="https://github.com/tu-usuario/proyecto-rtmp" target="_blank" class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070');"> 
-          <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
-            <h3 class="project-title">Plataforma Streaming RTMP</h3> 
-            <p class="project-description">API en Django para ingesta de video en tiempo real. Soporta 10k+ conexiones concurrentes usando Nginx-RTMP y GCP. Latencia 2s</p> 
-            <div class="project-tech"> 
-              <span>Django</span> 
-              <span>GCP</span> 
-              <span>WebSockets</span> 
-              <span>Docker</span> 
-            </div> 
-          </div>
-          <div class="project-link"> 
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
-              <path d="M7 17L17 7M17 7H7M17 7V17" /> 
-            </svg> 
-          </div> 
-        </a> 
-      </div> 
+  <!-- PROYECTOS -->
+  <section class="projects" id="proyectos">
+    <div class="projects-container">
+      <h2>Proyectos Destacados</h2>
+      <div class="projects-grid">
 
-      <!-- PROYECTO 2: SISTEMA CHAT --> 
-      <div class="project-content"> 
-        <a href="https://github.com/tu-usuario/chat-realtime" target="_blank" class="project-card" style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2039');"> 
-          <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
-            <h3 class="project-title">Chat Tiempo Real</h3> 
-            <p class="project-description">Sistema de mensajería con Django Channels y Redis. Salas privadas, presencia de usuarios y persistencia en PostgreSQL.</p> 
-            <div class="project-tech"> 
-              <span>Django Channels</span> 
-              <span>Redis</span> 
-              <span>PostgreSQL</span> 
-            </div> 
-          </div>
-          <div class="project-link"> 
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
-              <path d="M7 17L17 7M17 7H7M17 7V17" /> 
-            </svg> 
-          </div> 
-        </a> 
-      </div> 
+        <!-- PROYECTO 1: API RTMP -->
+        <div class="project-content">
+          <a href="https://github.com/tu-usuario/proyecto-rtmp" target="_blank" class="project-card"
+            style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070');">
+            <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
+              <h3 class="project-title">Plataforma Streaming RTMP</h3>
+              <p class="project-description">API en Django para ingesta de video en tiempo real. Soporta 10k+ conexiones
+                concurrentes usando Nginx-RTMP y GCP. Latencia 2s</p>
+              <div class="project-tech">
+                <span>Django</span>
+                <span>GCP</span>
+                <span>WebSockets</span>
+                <span>Docker</span>
+              </div>
+            </div>
+            <div class="project-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+        </div>
 
-      <!-- PROYECTO 3: E-COMMERCE API --> 
-      <div class="project-content"> 
-        <a href="https://github.com/tu-usuario/ecommerce-api" target="_blank" class="project-card" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070');"> 
-          <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
-            <h3 class="project-title">API E-commerce</h3> 
-            <p class="project-description">REST API completa con DRF. Carrito, pagos con Stripe, panel admin y optimización de queries de N+1 a 3 queries.</p> 
-            <div class="project-tech"> 
-              <span>Django REST</span> 
-              <span>Stripe</span> 
-              <span>Celery</span> 
-            </div> 
-          </div>
-          <div class="project-link"> 
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
-              <path d="M7 17L17 7M17 7H7M17 7V17" /> 
-            </svg> 
-          </div> 
-        </a> 
-      </div> 
+        <!-- PROYECTO 2: SISTEMA CHAT -->
+        <div class="project-content">
+          <a href="https://github.com/tu-usuario/chat-realtime" target="_blank" class="project-card"
+            style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2039');">
+            <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
+              <h3 class="project-title">Chat Tiempo Real</h3>
+              <p class="project-description">Sistema de mensajería con Django Channels y Redis. Salas privadas,
+                presencia de usuarios y persistencia en PostgreSQL.</p>
+              <div class="project-tech">
+                <span>Django Channels</span>
+                <span>Redis</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+            <div class="project-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+        </div>
 
-    </div> 
-  </div> 
-</section>
+        <!-- PROYECTO 3: E-COMMERCE API -->
+        <div class="project-content">
+          <a href="https://github.com/tu-usuario/ecommerce-api" target="_blank" class="project-card"
+            style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070');">
+            <div class="project-card-inner"> <!-- CAMBIÉ AQUÍ 👈 -->
+              <h3 class="project-title">API E-commerce</h3>
+              <p class="project-description">REST API completa con DRF. Carrito, pagos con Stripe, panel admin y
+                optimización de queries de N+1 a 3 queries.</p>
+              <div class="project-tech">
+                <span>Django REST</span>
+                <span>Stripe</span>
+                <span>Celery</span>
+              </div>
+            </div>
+            <div class="project-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- HABILIDADES -->
   <section id="habilidades">
@@ -241,7 +255,26 @@
     <p>&copy; 2026 Cristopher Salas. Hecho con código y café.</p>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const body = document.body;
 
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      body.classList.toggle('menu-open');
+    });
+
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+      });
+    });
+  </script>
 
   <script>
     const hero = document.querySelector('.hero');
@@ -292,6 +325,9 @@
       });
     }
   </script>
+
+
+
 </body>
 
 

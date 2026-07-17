@@ -31,6 +31,199 @@ header {
   z-index: 100; 
 } 
 
+
+/* === NAVBAR === */
+header { 
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  color: #fff; 
+  padding: 1rem 0; 
+  position: fixed; 
+  width: 100%; 
+  top: 0; 
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} 
+
+nav { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1.5rem; 
+  position: relative;
+} 
+
+#nameNavBar { 
+  color: #dfd5d7; 
+  font-size: 1rem; 
+  font-family: "Montserrat", sans-serif; 
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  z-index: 1001;
+} 
+
+/* LINKS DESKTOP */
+nav ul { 
+  display: flex; 
+  list-style: none; 
+  gap: 2rem; 
+} 
+
+nav a { 
+  color: #fff; 
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+} 
+
+nav a:hover {
+  color: #FF5A5A;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF5A5A;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* BOTÓN HAMBURGUESA - OCULTO EN DESKTOP */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* ANIMACIÓN DE X CUANDO ESTÁ ACTIVO */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* === MOBILE - MENÚ RESPONSIVE === */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  #nameNavBar {
+    font-size: 0.9rem;
+  }
+
+  /* MOSTRAR HAMBURGUESA */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* OCULTAR LINKS Y HACER MENÚ DESPLEGABLE */
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background: #1a1a1a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.4s ease;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* MENÚ ABIERTO */
+  nav ul.active {
+    right: 0;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  /* OVERLAY OSCURO CUANDO EL MENÚ ESTÁ ABIERTO */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+}
+
+/* === AJUSTES HERO PARA QUE NO LO TAPE EL HEADER === */
+#hero { 
+  background: #0F0F0F; 
+  text-align: center; 
+  padding: 8rem 1.5rem 4rem; /* Más padding arriba por el header fijo */
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#hero h3 {
+  font-size: 2.5rem; /* Más chico en mobile */
+  margin: 1rem 0;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  max-width: 50ch;
+  color: #94A3B8;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  #name {
+    font-size: 1.75rem;
+  }
+
+  #hero h3 {
+    font-size: 1.75rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
 h3 { 
   color: #EDEDED; 
   font-size: 5rem; 
